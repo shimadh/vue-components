@@ -1,35 +1,34 @@
 <template>
-  <div class="container is-fluid">
+  <main class="container is-fluid wrapper">
     <div class="column">
-      <Navbar></Navbar>
       <div class="columns is-mobile">
         <div class="column is-one-quarter">
           <Sidebar></Sidebar>
         </div>
         <div class="column">
-          <Login></Login>
-          <Profile></Profile>
+          <Breadcrumb></Breadcrumb>
+          <router-view></router-view>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- </div> -->
+  </main>
 </template>
 
 <script>
-import Navbar from "../components/Navbar.vue";
 import Sidebar from "../components/Sidebar.vue";
-import Login from "../components/Login.vue";
-import Profile from "../components/Profile.vue";
+import Breadcrumb from "../components/Breadcrumb.vue";
 
 export default {
-  name: "layout",
+  name: "Layout",
   components: {
-    Navbar,
     Sidebar,
-    Login,
-    Profile
+    Breadcrumb
   }
 };
 </script>
+
+<style scoped>
+.wrapper {
+  flex: 1;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <header>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href>
@@ -21,14 +21,14 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item">Home</a>
+          <a href="/" class="navbar-item">Home</a>
 
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">Components</a>
 
             <div class="navbar-dropdown">
-              <a class="navbar-item">Login</a>
-              <a class="navbar-item">Profile</a>
+              <router-link to="/login" class="navbar-item">Login</router-link>
+              <router-link to="/profile" class="navbar-item">Profile</router-link>
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@
         </div>
       </div>
     </nav>
-  </div>
+  </header>
 </template>
 
 <script>
