@@ -1,5 +1,5 @@
 <template>
-  <h3 class="subtitle has-text-white">Sorry. We couldn't find that Pokémon :(.</h3>
+  <h3 class="subtitle has-text-danger">Sorry. We couldn't what you looking :(.</h3>
 </template>
 
 <script>

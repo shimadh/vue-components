@@ -17,7 +17,7 @@
     </div>
 
     <div class="field">
-      <button class="button is-primary" @click="submit">Sign in</button>
+      <button class="button is-link is-outlined" @click="submit">Sign in</button>
     </div>
   </div>
 </template>

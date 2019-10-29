@@ -15,17 +15,18 @@
           </div>
           <div class="media-content">
             <p class="title is-4">{{name}}</p>
-            <p class="subtitle is-6">@shimadh</p>
+            <p class="subtitle is-6">
+              <a :href="login_url" target="_blank">@{{login}}</a>
+            </p>
           </div>
         </div>
 
-        <div class="content">
-          {{ introduction }}
-          <a>@bulmaio</a>.
-          <a href="#">#css</a>
-          <a href="#">#responsive</a>
-          <br>
-          <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+        <div class="content">{{ introduction }}</div>
+        <div class="tags has-addons">
+          <span class="tag">Skills:</span>
+        </div>
+        <div class="tags">
+          <span class="tag is-link is-light" v-for="(skill, key) in skills" :key="key">{{skill}}</span>
         </div>
       </div>
     </div>
@@ -33,16 +34,27 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "profile",
   data() {
     return {
-      name: "shimad",
-      avatar: "https://avatars1.githubusercontent.com/u/12815658?v=4",
+      login: "",
+      login_url: "",
+      name: "",
+      avatar: "",
       introduction:
         "Hello, I am a fullstack Javscript Developer. This is the very first vue course i took my time for practicing my VueJs skills to the next level from lean Vue Js in 30 days program!",
       skills: ["Javascipt", "Vue", "React", "Node", "sequelize", "Php"]
     };
+  },
+  created() {
+    axios.get("https://api.github.com/users/shimadh").then(response => {
+      this.login = response.data.login;
+      this.login_url = response.data.html_url;
+      this.name = response.data.name;
+      this.avatar = response.data.avatar_url;
+    });
   },
   methods: {}
 };

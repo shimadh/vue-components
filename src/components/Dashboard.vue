@@ -1,9 +1,8 @@
 <template>
-  <section>
+  <section class="hero is-medium is-primary is-bold">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">Welcome</h1>
-        <h2 class="subtitle">Welcome to learn vue js</h2>
+        <h1 class="title">Welcome to vue family</h1>
       </div>
     </div>
   </section>
